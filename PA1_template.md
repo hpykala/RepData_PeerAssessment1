@@ -12,7 +12,7 @@ unzip("activity.zip")
 activity <- fread("activity.csv")
 ```
 
-Chech the basic charasteristics
+Check the basic characteristics
 
 ```r
 str(activity)
@@ -219,7 +219,7 @@ table(activity$date,activity$missing)
 
 There are eight dates with no step data recorded, all the other dates have full data. 
 
-As the missing data involves whole days, it makes no sense to fill the data with mean of the day. The individual intervals have skeved data, which in this case makes median a poor choice. So we will impute the missing data by mean value of the interval over the all other days. Set the steps variable to be steps with missing values replaced by mean steps by interval ignoring missing values. In data.table this can be done easily on one line, but first we need to make a explicit copy of the original data to avoid messing with it and convert the steps variable from integer to numeric to avoid coercion errors.
+As the missing data involves whole days, it makes no sense to fill the data with mean of the day. The individual intervals have skewed data, which in this case makes median a poor choice. So we will impute the missing data by mean value of the interval over the all other days. Set the steps variable to be steps with missing values replaced by mean steps by interval ignoring missing values. In data.table this can be done easily on one line, but first we need to make a explicit copy of the original data to avoid messing with it and convert the steps variable from integer to numeric to avoid coercion errors.
 
 
 ```r
